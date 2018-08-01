@@ -24,6 +24,10 @@ public class Player extends Entity{
 	private final String[] TIER_LIST_NAMES = {"President", "Dean", "Department Head", "Researcher", "Research Assistant"};
 	private final int[] TIER_LIST_REQUIREMENTS = {0, 100, 300, 600, 1000};
 	
+	private final String DEFAULT_FEM_SKIN_PATH = "/sprites/female/female.png";
+	private final String DEFAULT_MAL_SKIN_PATH = "/sprites/male/male.png";
+	private final String DEFAULT_NON_SKIN_PATH = "/sprites/nonbinary/female.png";
+	
 	private ArrayList<Character> assistants;
 	private boolean[][] identity;
 	private boolean[] aware;
@@ -180,9 +184,9 @@ public class Player extends Entity{
 			if(identity[1][i])
 				loc = i;
 		switch(loc){
-		  case 0: setVisual("/Assets/Entities/Male/"); break;
-		  case 1: setVisual("/Assets/Entities/Female/"); break;
-		  case 2: setVisual("/Assets/Entities/NonBinary/"); break;
+		  case 0: setVisual(DEFAULT_MAL_SKIN_PATH); break;
+		  case 1: setVisual(DEFAULT_FEM_SKIN_PATH); break;
+		  case 2: setVisual(DEFAULT_NON_SKIN_PATH); break;
 		  default: break;
 		}
 		skinMap = resetSkinMap;

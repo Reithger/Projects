@@ -48,14 +48,6 @@ public class InteractFrame extends JPanel{
 	}
 	
 	public static Image retrieveImage(String path) {
-			try {
-				if(path.charAt(path.length()-1) == '/') {
-					String alt = (new File(InteractFrame.class.getResource(path).toURI()).listFiles()[0]).getAbsolutePath();
-					path += alt.split("/")[alt.split("/").length-1];
-				}
-			} catch (URISyntaxException e) {
-				e.printStackTrace();
-			}
 		try {
 			return ImageIO.read(InteractFrame.class.getResource(path));
 		}
@@ -106,7 +98,7 @@ public class InteractFrame extends JPanel{
 	
 	public void addOwnText(int x, int y, String phrase, Graphics g, int scale){
 		for(int i = 0; i < phrase.length(); i++){
-			String address = "/Assets/Letters/";
+			String address = "/Letters/";
 			if("0123456789".indexOf(phrase.charAt(i)) != -1){
 				address += "Digits/" + phrase.charAt(i) + ".png";
 			}

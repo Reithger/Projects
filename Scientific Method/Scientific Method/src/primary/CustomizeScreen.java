@@ -33,6 +33,14 @@ public class CustomizeScreen extends InteractFrame{
 	private final int DISPLACE_CENTRAL_BUTTON = 85;
 	//Need a region that the user can click to cycle through options for that spot
 	
+	private final String DEFAULT_VISUAL_PATH = "/sprites/Male/male.png";
+	private final String DEFAULT_TITLE_FRAME_PATH = "/UI/TitleFrame/TitleFrame.png";
+	private final String DEFAULT_FRAME_PATH = "/UI/Frame/frame.png";
+	private final String DEFAULT_BACKGROUND_PATH = "/Backgrounds/CustomizeScreen/customize.png";
+	private final String DEFAULT_LETTER_FRAME_PATH = "/UI/LetterFrame/letterFrame.png";
+	private final String DEFAULT_FORWARD_ARROW_PATH = "/UI/FwdArrow/rtArr.png";
+	private final String DEFAULT_BACK_ARROW_PATH = "/UI/BckArrow/ltArr.png";
+	
 	private int[] stateSlider;
 	private Player sci;
 	private Object waiting;
@@ -48,7 +56,7 @@ public class CustomizeScreen extends InteractFrame{
 		waiting = paused;
 		stateSlider = new int[6];
 		this.setDoubleBuffered(true);
-		sci = new Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2, "/Assets/Entities/Male/");
+		sci = new Player(SCREEN_WIDTH/2, SCREEN_HEIGHT/2, DEFAULT_VISUAL_PATH);
 		sci.adjustVisual();
 		parentFrame.add(this);
 		parentFrame.setTitle(title);
@@ -64,21 +72,21 @@ public class CustomizeScreen extends InteractFrame{
 	public void paintComponent(Graphics g){
 		addShadedRegion(0,0, SCREEN_WIDTH, SCREEN_HEIGHT, new Color(1f, 1f, 1f, 1f), g);	//It's cheap, but it resets the screen.
 		g.setColor(Color.black);
-		addPic(SCREEN_WIDTH/2, SCREEN_HEIGHT/2, "/Assets/Backgrounds/CustomizeScreen/", g);
+		addPic(SCREEN_WIDTH/2, SCREEN_HEIGHT/2, DEFAULT_BACKGROUND_PATH, g);
 		addSlider(-SLIDER_X_BASE, SLIDER_Y_BASE, 0, g);
 		addSlider(SLIDER_X_BASE, SLIDER_Y_BASE, 1, g);
 		addSlider(-(int)(SLIDER_X_BASE * 1.75), (int)(SLIDER_Y_BASE * 2.1), 2, g);
 		addSlider((int)(SLIDER_X_BASE * 1.75), (int)(SLIDER_Y_BASE * 2.1), 3, g);
 		addSlider(-SLIDER_X_BASE*3/2, (int)(SLIDER_Y_BASE * 3.33), 4, g);
 		addSlider(SLIDER_X_BASE*3/2, (int)(SLIDER_Y_BASE * 3.33), 5, g);
-		addClickPic(SCREEN_WIDTH/2, SCREEN_HEIGHT - 150, "/Assets/UI/Frame/", g, 13);
+		addClickPic(SCREEN_WIDTH/2, SCREEN_HEIGHT - 150, DEFAULT_FRAME_PATH, g, 13);
 		addOwnText(SCREEN_WIDTH/2, SCREEN_HEIGHT-150, characterName, g, 3);
-		addClickPicScaled(SCREEN_WIDTH * 5/6, SCREEN_HEIGHT *4/5 + 40, "/Assets/UI/TitleFrame/", g, 12,3);
+		addClickPicScaled(SCREEN_WIDTH * 5/6, SCREEN_HEIGHT *4/5 + 40, DEFAULT_TITLE_FRAME_PATH, g, 12,3);
 		addOwnText(SCREEN_WIDTH * 5/6, SCREEN_HEIGHT * 4/5 + 40, "Start Game", g, MEDIUM_TEXT_SCALE);
 		
-		addClickPicScaled(SCREEN_WIDTH/2 + DISPLACE_CENTRAL_BUTTON, SCREEN_HEIGHT/2 - DISPLACE_CENTRAL_BUTTON, "/Assets/UI/LetterFrame/", g, 14, 2);
+		addClickPicScaled(SCREEN_WIDTH/2 + DISPLACE_CENTRAL_BUTTON, SCREEN_HEIGHT/2 - DISPLACE_CENTRAL_BUTTON, DEFAULT_LETTER_FRAME_PATH, g, 14, 2);
 		addOwnText(SCREEN_WIDTH/2 + DISPLACE_CENTRAL_BUTTON, SCREEN_HEIGHT/2 - DISPLACE_CENTRAL_BUTTON, "Hair", g, 2);
-		addClickPicScaled(SCREEN_WIDTH/2 - DISPLACE_CENTRAL_BUTTON, SCREEN_HEIGHT/2 + DISPLACE_CENTRAL_BUTTON, "/Assets/UI/LetterFrame/", g, 15, 2);
+		addClickPicScaled(SCREEN_WIDTH/2 - DISPLACE_CENTRAL_BUTTON, SCREEN_HEIGHT/2 + DISPLACE_CENTRAL_BUTTON, DEFAULT_LETTER_FRAME_PATH, g, 15, 2);
 		addOwnText(SCREEN_WIDTH/2 - DISPLACE_CENTRAL_BUTTON, SCREEN_HEIGHT/2 + DISPLACE_CENTRAL_BUTTON, "Shoes", g, 2);
 		
 		
@@ -133,15 +141,15 @@ public class CustomizeScreen extends InteractFrame{
 	}
 	
 	private void addSlider(int x, int y, int index, Graphics g){
-		addPic(SCREEN_WIDTH/2 + x, y, "/Assets/UI/Frame/", g);
+		addPic(SCREEN_WIDTH/2 + x, y, DEFAULT_FRAME_PATH, g);
 		for(int i = 0; i < titles[index].split(" ").length; i++){
 			addOwnText(SCREEN_WIDTH/2 + x, y - 30 + (i - titles[index].split(" ").length/2) * MEDIUM_TEXT_SCALE * 8, titles[index].split(" ")[i], g, MEDIUM_TEXT_SCALE);
 		}
 		for(int i = 0; i < sliders[index][stateSlider[index]].split(" ").length; i++){
 			addOwnText(SCREEN_WIDTH/2 + x, y + 20 + (i - sliders[index][stateSlider[index]].split(" ").length/2) * SMALL_TEXT_SCALE * 8, sliders[index][stateSlider[index]].split(" ")[i], g, SMALL_TEXT_SCALE);	
 		}
-		addClickPic(SCREEN_WIDTH/2 + x - 125, y + 25, "/Assets/UI/BckArrow/", g, index*2);
-		addClickPic(SCREEN_WIDTH/2 + x + 125, y + 25, "/Assets/UI/FwdArrow/", g, index*2 + 1);
+		addClickPic(SCREEN_WIDTH/2 + x - 125, y + 25, DEFAULT_BACK_ARROW_PATH, g, index*2);
+		addClickPic(SCREEN_WIDTH/2 + x + 125, y + 25, DEFAULT_FORWARD_ARROW_PATH, g, index*2 + 1);
 	}
 	
 	public Player getPlayer(){

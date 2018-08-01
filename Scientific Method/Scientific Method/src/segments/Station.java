@@ -16,6 +16,8 @@ public class Station {
 	
 	private final String[][] KEYBOARD = {{"q","w","e","r","t","y","&","u","i","o"},{"a","s","&","d","f","g","h","j","k","l",},{"z","x","c","&","v","b","n","m","p","&"}};
 	private final int BASE_VOLUME = 4;
+	
+	private final String DEFAULT_TILE_PATH = "/UI/Tile/stationTile.png";
 
 	private int difficulty;
 	private boolean onOff;
@@ -31,7 +33,7 @@ public class Station {
 	public Station(int diff, int x, int y, int age){
 		difficulty = diff;
 		lifeSpan = age;
-		visualDisplay = new Entity(x, y, "/Assets/UI/Tile/");
+		visualDisplay = new Entity(x, y, DEFAULT_TILE_PATH);
 		gamePattern = new String[diff];
 		setStation();
 		resetInit();

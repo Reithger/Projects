@@ -9,6 +9,7 @@ import primary.TitleScreen;
 
 	/*
 	 *  - Make a display screen of varying dimensions (no stupid glitches like the WGST project) - DONE; STATIC SIZE
+	 *  - Should do multiple sizes for smaller computers.
 	 *  - Title menu, Character customization menu, Socialization map (shifts around larger map), Research event screen
 	 *  - Use pre-generated images corresponding to internal invisible walls.
 	 *  - User control of character entity WASD movement, text navigation in Socialization

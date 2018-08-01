@@ -59,20 +59,12 @@ public class Entity {
 	
 	public Image retrieveImage(String path) {
 		try {
-			if(path.charAt(path.length()-1) == '/') {
-				String alt = (new File(InteractFrame.class.getResource(path).toURI()).listFiles()[0]).getAbsolutePath();
-				path += alt.split("/")[alt.split("/").length-1];
-			}
-		} catch (URISyntaxException e) {
-			e.printStackTrace();
+			return ImageIO.read(InteractFrame.class.getResource(path));
 		}
-	try {
-		return ImageIO.read(InteractFrame.class.getResource(path));
-	}
-	catch(Exception e) {
-		e.printStackTrace();
-		return null;
-	}
+		catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 }
 
 	public void setVisual(String fileLocation){

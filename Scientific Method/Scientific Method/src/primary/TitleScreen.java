@@ -29,6 +29,9 @@ public class TitleScreen extends InteractFrame{
 	private final int TITLE_SCALE = 8;
 	private final int REFRESH_RATE = 1000/15;
 	
+	private final String DEFAULT_BACKGROUND_PATH = "/Backgrounds/TitleScreen/title.png";
+	private final String DEFAULT_TITLE_FRAME_PATH = "/UI/TitleFrame/TitleFrame.png";
+	
 	private boolean active;
 	private Object waiting;
 	private Timer timer;
@@ -49,15 +52,19 @@ public class TitleScreen extends InteractFrame{
 	public void paintComponent(Graphics g){
 		g.setColor(Color.black);
 		g.setFont(new Font("Times New Roman", Font.BOLD, 44));
-		addPicScaled(SCREEN_WIDTH/2, SCREEN_HEIGHT/2, "/Assets/Backgrounds/TitleScreen/", g, 4);
+		addPicScaled(SCREEN_WIDTH/2, SCREEN_HEIGHT/2, DEFAULT_BACKGROUND_PATH, g, 4);
+		
+		
 		addShadedRegion(SCREEN_WIDTH/5, 0, SCREEN_WIDTH*3/5, SCREEN_HEIGHT, new Color(0,0,0,.8f), g);
-		addPicScaled(SCREEN_WIDTH/2, 150, "/Assets/UI/TitleFrame/", g, TITLE_SCALE);
+		addPicScaled(SCREEN_WIDTH/2, 150, DEFAULT_TITLE_FRAME_PATH, g, TITLE_SCALE);
 		for(int i = 0; i < TITLE.length; i++){
 		  addOwnText(SCREEN_WIDTH/2, 150 + (i - TITLE.length/2) * TITLE_SCALE * 8, TITLE[i], g, TITLE_SCALE);
 		}
 		g.setFont(new Font("Times New Roman", Font.BOLD, 24));
-		addClickPicScaled(SCREEN_WIDTH/2, SCREEN_HEIGHT*4/5, "/Assets/UI/TitleFrame/", g, 0, TITLE_SCALE/2);
-		addOwnText(SCREEN_WIDTH/2, SCREEN_HEIGHT*4/5, CONTINUE_TEXT, g, TITLE_SCALE/2);	
+		addClickPicScaled(SCREEN_WIDTH/2, SCREEN_HEIGHT*4/5, DEFAULT_TITLE_FRAME_PATH, g, 0, TITLE_SCALE/2);
+		addOwnText(SCREEN_WIDTH/2, SCREEN_HEIGHT*4/5, CONTINUE_TEXT, g, TITLE_SCALE/2);
+		
+		
 	}
 	
 	
