@@ -17,7 +17,7 @@ public class Social extends TimerTask{
 	private final int[] CORRELATE = {0, 1, 1, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4};
 	private final int NPC_MOVE = 5;
 	
-	private final String DEFAULT_SPRITE_FEM_PATH = "/sprites/female/female.png";
+	private final String DEFAULT_SPRITE_FEM_PATH = "/sprites/Female/female.png";
 	
 	private ArrayList<Character> cha;
 	private SocializationScreen parent;

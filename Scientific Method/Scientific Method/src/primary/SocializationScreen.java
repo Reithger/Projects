@@ -35,7 +35,7 @@ public class SocializationScreen extends InteractFrame{
 	private final String DEFAULT_LETTER_COLON_PATH = "/Letters/SpecialCharacters/colon.png";
 	private final String DEFAULT_LETTER_PERIOD_PATH = "/Letters/SpecialCharacters/period.png";
 	private final String DEFAULT_TILE_PATH = "/UI/Tile/stationTile.png";
-	private final String DEFAULT_SPRITE_FEM_PATH = "/sprites/female/female.png";
+	private final String DEFAULT_SPRITE_FEM_PATH = "/sprites/Female/female.png";
 
 	private BufferedImage map;
 	private Social socialSegment;

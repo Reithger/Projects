@@ -24,9 +24,9 @@ public class Player extends Entity{
 	private final String[] TIER_LIST_NAMES = {"President", "Dean", "Department Head", "Researcher", "Research Assistant"};
 	private final int[] TIER_LIST_REQUIREMENTS = {0, 100, 300, 600, 1000};
 	
-	private final String DEFAULT_FEM_SKIN_PATH = "/sprites/female/female.png";
-	private final String DEFAULT_MAL_SKIN_PATH = "/sprites/male/male.png";
-	private final String DEFAULT_NON_SKIN_PATH = "/sprites/nonbinary/female.png";
+	private final String DEFAULT_FEM_SKIN_PATH = "/sprites/Female/female.png";
+	private final String DEFAULT_MAL_SKIN_PATH = "/sprites/Male/male.png";
+	private final String DEFAULT_NON_SKIN_PATH = "/sprites/Nonbinary/female.png";
 	
 	private ArrayList<Character> assistants;
 	private boolean[][] identity;
