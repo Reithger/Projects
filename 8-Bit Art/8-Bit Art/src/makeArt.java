@@ -32,8 +32,8 @@ public class makeArt extends GraphicsProgram{
 	private final int SIZE_UI = 10;					/** Constant value for the rate at which RGB color values are adjusted */
 	private final int COLOR_CHANGE_RATE = 3;		/** Constant value for height adjustment regarding the header */		
 	private final int VERTICAL_ADJUSTMENT = 59;		/** Constant value for reserving vertical space for UI elements */
-	private final int VERTICAL_UI_SPACE = 30;		/** Constant value for reserving horizontal space for UI elements */
-	private final int HORIZONTAL_UI_SPACE = 80;		/** Constant values defining the X positions of UI elements */
+	private final int VERTICAL_UI_SPACE = 60;		/** Constant value for reserving horizontal space for UI elements */
+	private final int HORIZONTAL_UI_SPACE = 120;		/** Constant values defining the X positions of UI elements */
 	private final int[] UI_SPACING = {0, 45, 91, 136, 190, 238, 293, 368, 448, 540};	/** Constant value defining the Font used for all text */
 	private final Font FONT_DEFAULT = new Font("Sans Serif", Font.BOLD, 14);	/** Constant value defining the Y position of UI elements */
 	private final int UI_HEIGHT = 18;				/** Constant value defining the width of the screen when in the Help menu */
@@ -646,7 +646,9 @@ public class makeArt extends GraphicsProgram{
 		try{
 			inputImage = ImageIO.read(chooser.getSelectedFile());
 		}
-		catch(Exception e){ return; };
+		catch(Exception e){
+			return; 
+		}
 		gridSizeX = inputImage.getWidth();
 		gridSizeY = inputImage.getHeight();
 		drawCanvas = new Pixel[gridSizeX][gridSizeY];

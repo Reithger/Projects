@@ -1,8 +1,8 @@
 package primary;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.io.File;
 import javax.swing.*;
 
 import mechanics.InteractFrame;
@@ -66,7 +66,6 @@ public class TitleScreen extends InteractFrame{
 		
 		
 	}
-	
 	
 	public boolean getActiveState(){
 		return active;

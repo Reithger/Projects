@@ -1,12 +1,10 @@
 package mechanics;
+
 import java.util.ArrayList;
 import java.awt.event.*;
 import java.awt.*;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.io.*;
-import java.net.URISyntaxException;
 
 public class InteractFrame extends JPanel{
 	
